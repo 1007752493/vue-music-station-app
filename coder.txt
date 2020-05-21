@@ -1,0 +1,4 @@
+npm install router --save
+npm install vue-router --save
+npm install sass-loader --save
+npm install node-sass --save
