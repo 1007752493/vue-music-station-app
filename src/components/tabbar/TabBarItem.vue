@@ -15,11 +15,15 @@ export default {
     path: String,
     activeLength: {
       type: String,
-      default: '16px',
+      default: '14.5px',
+    },
+    activeColor: {
+      type: String,
+      default: '#fbeeed',
     },
     activeWeight: {
       type: String,
-      default: '#ffe6e4',
+      default: 'bold',
     },
   },
   data() {
@@ -37,7 +41,8 @@ export default {
       return this.isActive
         ? {
             'font-size': this.activeLength,
-            color: this.activeWeight,
+            color: this.activeColor,
+            'font-weight': this.activeWeight,
           }
         : {}
     },
