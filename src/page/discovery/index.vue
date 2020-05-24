@@ -1,10 +1,14 @@
 <template>
-  <h2>分类</h2>
+  <div>
+    <h2>fuck</h2>
+  </div>
 </template>
 
 <script>
+// import Banner from './banner'
 export default {
-  name: 'category',
+  name: 'profile',
+  components: {},
 }
 </script>
 

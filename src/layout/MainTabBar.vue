@@ -1,6 +1,6 @@
 <template>
   <tab-bar>
-    <tab-bar-item path="/home">
+    <tab-bar-item path="/discovery">
       <div slot="item-text">推荐</div>
     </tab-bar-item>
     <tab-bar-item path="category">
