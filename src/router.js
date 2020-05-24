@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import VueRouter from 'vue-router'
 
 const Index = () => import('./page/discovery/index.vue')
 const Category = () => import('./views/category/Category.vue')
@@ -8,7 +7,7 @@ const Cart = () => import('./views/cart/Cart.vue')
 
 Vue.use(Router)
 
-const routes = [{
+const menuRoutes = [{
     path: '',
     redirect: '/discovery'
   },
@@ -26,9 +25,13 @@ const routes = [{
   },
 ]
 
-const router = new VueRouter({
-  routes,
-  mode: 'history'
-})
+export default new Router({
+  mode: 'history',
+  routes: [{
+      path: '/',
+      redirect: '/discovery',
+    },
 
-export default router
+    ...menuRoutes,
+  ],
+})

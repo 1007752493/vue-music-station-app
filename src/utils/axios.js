@@ -4,8 +4,8 @@ import {
 } from 'element-ui'
 import {
   confirm
-} from '../base/confirm.vue'
-import store from '../store/index'
+} from '@/base/confirm'
+import store from '@/store'
 
 const BASE_URL = 'https://api.mtnhao.com/'
 // 不带全局loading的请求实例

@@ -1,19 +1,22 @@
 <template>
-  <div>
-    <h2>fuck</h2>
+  <div class="discovery">
+    <div class="discovery-content">
+      <Banner />
+
+    </div>
   </div>
 </template>
 
 <script>
-// import Banner from './banner'
+import Banner from './banner'
 export default {
   name: 'profile',
-  components: {},
+  components: { Banner },
 }
 </script>
 
-<style scoped>
-h2 {
-  margin-top: 100px;
+<style lang="scss" scoped>
+.discovery {
+  padding: 18px 32px;
 }
 </style>
