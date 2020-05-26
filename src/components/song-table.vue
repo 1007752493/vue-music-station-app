@@ -38,25 +38,6 @@ export default {
     return {
       columns: [
         {
-          prop: "index",
-          label: "",
-          width: "70",
-          scopedSlots: {
-            default: scope => {
-              return (
-                <div class="index-wrap">
-                  {this.isActiveSong(scope.row) ? (
-                    <Icon class="horn" type="horn" color="theme" />
-                  ) : (
-                      // 补上左边的0
-                      <span>{pad(scope.$index + 1)}</span>
-                    )}
-                </div>
-              )
-            },
-          },
-        },
-        {
           prop: "img",
           label: " ",
           width: "100",
@@ -111,11 +92,6 @@ export default {
         {
           prop: "artistsText",
           label: "歌手",
-          scopedSlots: commonHighLightSlotScopes,
-        },
-        {
-          prop: "albumName",
-          label: "专辑",
           scopedSlots: commonHighLightSlotScopes,
         },
         {
@@ -274,12 +250,8 @@ function genPropsAndAttrs (rawAttrs, componentProps) {
 
   .song-table-name-cell {
     @include text-ellipsis;
-    display: flex;
-    align-items: center;
-    flex: 0 0 24px;
 
     .song-table-name {
-      overflow: hidden;
       @include text-ellipsis;
     }
 

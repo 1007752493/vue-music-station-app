@@ -1,5 +1,6 @@
 <template>
-  <div class="wrap" @click="onClickCard">
+  <div class="wrap"
+       @click="onClickCard">
     <div class="top-playlist-card">
       <div class="img-wrap">
         <img v-lazy="$utils.genImgUrl(img, 280)" />
@@ -12,7 +13,8 @@
         <p class="desc">{{ desc }}</p>
       </div>
     </div>
-    <div class="background" :style="{ backgroundImage: `url(${img})` }"></div>
+    <div class="background"
+         :style="{ backgroundImage: `url(${img})` }"></div>
     <div class="background-mask"></div>
   </div>
 </template>
@@ -21,7 +23,7 @@
 export default {
   props: ["id", "img", "name", "desc"],
   methods: {
-    onClickCard() {
+    onClickCard () {
       this.$router.push(`/playlist/${this.id}`)
     }
   }
@@ -32,7 +34,6 @@ export default {
 .wrap {
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
   cursor: pointer;
 
   .top-playlist-card {

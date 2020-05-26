@@ -28,8 +28,9 @@ export default {
 <style lang="scss" scoped>
 .playlist-card {
   position: relative;
-  width: 150px;
-  padding: 5px;
+  margin: 0 auto;
+  width: 148px;
+  padding: 5px 5px;
   cursor: pointer;
 
   .img-wrap {
@@ -37,7 +38,7 @@ export default {
     width: 100%;
     padding-top: 100%;
     margin-bottom: 8px;
-    border-radius: 4px;
+    border-radius: 10px;
     overflow: hidden;
 
     img {

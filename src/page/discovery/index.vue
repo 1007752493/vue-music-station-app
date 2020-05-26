@@ -1,5 +1,5 @@
 <template>
-  <div class="discovery wrapper">
+  <div class="discovery">
     <div class="discovery-content content">
       <scroll class="content">
         <Banner />
@@ -29,7 +29,7 @@ export default {
 }
 
 .content {
-  height: calc(100%);
+  height: calc(100% - 32px);
   overflow: hidden;
 }
 </style>

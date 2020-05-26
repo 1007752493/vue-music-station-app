@@ -4,10 +4,10 @@
       <div slot="item-text">推荐</div>
     </tab-bar-item>
     <tab-bar-item path="category">
-      <div slot="item-text">排行</div>
+      <div slot="item-text">最新</div>
     </tab-bar-item>
     <tab-bar-item path="cart">
-      <div slot="item-text">歌手</div>
+      <div slot="item-text">MV</div>
     </tab-bar-item>
   </tab-bar>
 </template>

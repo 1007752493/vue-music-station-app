@@ -5,12 +5,17 @@
     :width="$utils.toRem(320)"
     class="confirm-dialog"
   >
-    <div slot="title">{{ title || '提示' }}</div>
-    <div class="confirm-body">{{ text }}</div>
-    <span class="dialog-footer" slot="footer">
-      <el-button @click="confirmAndClose" class="confirm-btn" type="primary"
-        >确认</el-button
-      >
+    <div slot="title">{{title || '提示'}}</div>
+    <div class="confirm-body">{{text}}</div>
+    <span
+      class="dialog-footer"
+      slot="footer"
+    >
+      <el-button
+        @click="confirmAndClose"
+        class="confirm-btn"
+        type="primary"
+      >确认</el-button>
     </span>
   </el-dialog>
 </template>
