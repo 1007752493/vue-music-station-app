@@ -36,10 +36,7 @@
     </div>
     <!-- 控制台 -->
     <div class="control">
-      <Icon :size="24"
-            @click="prev"
-            class="icon"
-            type="prev" />
+
       <el-popover :value="isPlayErrorPromptShow"
                   placement="top"
                   trigger="manual"
@@ -53,39 +50,16 @@
         </div>
       </el-popover>
 
-      <Icon :size="24"
-            @click="next"
-            class="icon"
-            type="next" />
     </div>
 
     <div class="mode">
-      <Share :shareUrl="shareUrl"
-             class="mode-item"
-             v-show="hasCurrentSong" />
 
-      <!-- 模式 -->
-      <el-popover placement="top"
-                  trigger="hover"
-                  width="160">
-        <p>{{ playModeText }}</p>
-        <Icon :size="20"
-              :type="modeIcon"
-              @click="onChangePlayMode"
-              class="mode-item"
-              slot="reference" />
-      </el-popover>
       <!-- 播放列表 -->
       <el-popover :value="isPlaylistPromptShow"
                   placement="top"
                   trigger="manual"
                   width="160">
         <p>已更新歌单</p>
-        <Icon :size="20"
-              @click="togglePlaylistShow"
-              class="mode-item"
-              slot="reference"
-              type="playlist" />
       </el-popover>
       <!-- 音量 -->
       <div class="volume-item">
@@ -284,16 +258,15 @@ export default {
 .mini-player {
   position: relative;
   position: fixed;
-  z-index: $mini-player-z-index;
   bottom: 0;
   left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
   height: $mini-player-height;
-  padding: 8px 16px;
-  padding-right: 24px;
-  background: var(--body-bgcolor);
+  padding: 8px 0px 8px 16px;
+
+  background: #fff;
 
   .song {
     display: flex;
@@ -367,16 +340,16 @@ export default {
     position: absolute;
     height: 100%;
     top: 0;
-    left: 50%;
+    left: 56.5%;
     transform: translateX(-50%);
-    width: 200px;
+    width: 100px;
     @include flex-center();
 
     .play-icon {
       @include flex-center();
       position: relative;
-      width: 45px;
-      height: 45px;
+      width: 40px;
+      height: 40px;
       margin: 0 16px;
       border-radius: 50%;
       background: $theme-color;
@@ -399,16 +372,14 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    flex: 6;
+    flex: 1;
 
     .mode-item {
       display: block;
-      margin-right: 16px;
-      width: 22px;
     }
 
     .volume-item {
-      margin-right: 22px;
+      margin-right: -10px;
     }
   }
 

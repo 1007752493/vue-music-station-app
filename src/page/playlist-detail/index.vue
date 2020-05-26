@@ -157,6 +157,7 @@ export default {
 
     .input {
       width: 125px;
+      margin-right: 10px;
 
       &:not(:hover) {
         &.inactive {

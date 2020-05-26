@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 const Index = () => import('./page/discovery/index.vue')
-const Category = () => import('./views/category/Category.vue')
 const Cart = () => import('./views/cart/Cart.vue')
 const PlaylistDetail = () => import('./page/playlist-detail')
+const Songs = () => import('./page/songs')
 
 Vue.use(Router)
 
@@ -14,11 +14,20 @@ const menuRoutes = [{
   },
   {
     path: '/discovery',
-    component: Index
+    component: Index,
+    meta: {
+      title: '发现音乐',
+      icon: 'music',
+    },
   },
   {
-    path: '/category',
-    component: Category
+    path: '/songs',
+    name: 'songs',
+    component: Songs,
+    meta: {
+      title: '最新音乐',
+      icon: 'yinyue',
+    },
   },
   {
     path: '/cart',

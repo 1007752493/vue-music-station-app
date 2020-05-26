@@ -3,7 +3,7 @@
     <tab-bar-item path="/discovery">
       <div slot="item-text">推荐</div>
     </tab-bar-item>
-    <tab-bar-item path="category">
+    <tab-bar-item path="songs">
       <div slot="item-text">最新</div>
     </tab-bar-item>
     <tab-bar-item path="cart">

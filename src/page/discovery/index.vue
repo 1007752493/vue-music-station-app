@@ -23,13 +23,13 @@ export default {
 
 <style lang="scss" scoped>
 .discovery {
-  margin-top: 32px;
+  margin-top: 31px;
   padding: 9px 12px;
   height: 100vh;
 }
 
 .content {
-  height: calc(100% - 32px);
+  height: calc(100% - 63px);
   overflow: hidden;
 }
 </style>

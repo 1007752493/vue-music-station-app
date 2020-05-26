@@ -39,6 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .banner-carousel {
+  padding-top: 5px;
   /deep/.el-carousel__container {
     height: 200px;
   }
