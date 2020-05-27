@@ -55,12 +55,7 @@
     <div class="mode">
 
       <!-- 播放列表 -->
-      <el-popover :value="isPlaylistPromptShow"
-                  placement="top"
-                  trigger="manual"
-                  width="160">
-        <p>已更新歌单</p>
-      </el-popover>
+
       <!-- 音量 -->
       <div class="volume-item">
         <Volume :volume="volume"
@@ -256,6 +251,7 @@ export default {
 
 <style lang="scss" scoped>
 .mini-player {
+  z-index: 100000;
   position: relative;
   position: fixed;
   bottom: 0;
@@ -264,7 +260,7 @@ export default {
   display: flex;
   justify-content: space-between;
   height: $mini-player-height;
-  padding: 8px 0px 8px 16px;
+  padding: 8px 0px 8px 8px;
 
   background: #fff;
 

@@ -1,13 +1,18 @@
 <template>
-  <div>
+  <div id='header'>
     <nav-bar class="navbar">
-      <div slot="left" class="left">
-        <img src="../assets/image/sort.png" />
+      <div slot="left"
+           class="left">
+        <div path="/discovery"
+             @click="itemClick">
+          <img src="../assets/image/sort.png" />
+        </div>
       </div>
       <div slot="center">
         <h2>music station</h2>
       </div>
-      <div slot="right" class="right">
+      <div slot="right"
+           class="right">
         <img src="../assets/image/search.png" />
       </div>
     </nav-bar>
@@ -17,9 +22,17 @@
 <script>
 import NavBar from '../components/NavBar'
 export default {
-  name: 'profile',
+  name: 'sss',
   components: {
     NavBar,
+  },
+  methods: {
+    itemClick () {
+      this.$router.replace(this.path).catch((err) => {
+        err
+      })
+      console.log(this.path)
+    },
   },
 }
 </script>

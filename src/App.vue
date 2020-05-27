@@ -1,16 +1,14 @@
 <template>
   <div id="app">
-    <Header />
-    <main-tab-bar />
-    <router-view />
+    <Index />
     <MiniPlayer />
     <Playlist />
+    <router-view />
   </div>
 </template>
 
 <script>
-import MainTabBar from './layout/MainTabBar'
-import Header from './layout/header'
+import Index from './layout/index'
 import MiniPlayer from "@/components/mini-player"
 import Playlist from "@/components/playlist"
 export default {
@@ -21,8 +19,7 @@ export default {
     }
   },
   components: {
-    MainTabBar,
-    Header,
+    Index,
     MiniPlayer,
     Playlist
   },

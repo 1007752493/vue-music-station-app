@@ -1,5 +1,6 @@
 <template>
-  <div class="tab-bar-item" @click="itemClick">
+  <div class="tab-bar-item"
+       @click="itemClick">
     <!-- <img src="../../assets/img/tabbar/home.svg">
     <div>首页</div> -->
     <div :style="activeStyle">
@@ -26,29 +27,29 @@ export default {
       default: 'bold',
     },
   },
-  data() {
+  data () {
     return {
       isShow: true,
     }
   },
   computed: {
-    isActive() {
+    isActive () {
       //indexOf方法：如果字符串没有此值 返回-1
       return this.$route.path.indexOf(this.path) !== -1
     },
-    activeStyle() {
+    activeStyle () {
       // 如果是 如果 不是 {}
       return this.isActive
         ? {
-            'font-size': this.activeLength,
-            color: this.activeColor,
-            'font-weight': this.activeWeight,
-          }
+          'font-size': this.activeLength,
+          color: this.activeColor,
+          'font-weight': this.activeWeight,
+        }
         : {}
     },
   },
   methods: {
-    itemClick() {
+    itemClick () {
       this.$router.replace(this.path).catch((err) => {
         err
       })
