@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     itemClick () {
-      this.$router.replace(this.path).catch((err) => {
+      this.$router.push(this.path).catch((err) => {
         err
       })
     },

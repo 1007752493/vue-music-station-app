@@ -28,10 +28,10 @@ export default {
   },
   methods: {
     itemClick () {
-      this.$router.replace(this.path).catch((err) => {
-        err
-      })
-      console.log(this.path)
+      // this.$router.replace('/discovery').catch((err) => {
+      //   err
+      // })
+      this.$router.go(-1)
     },
   },
 }
