@@ -2,8 +2,8 @@
 <template>
   <div class="mv" v-if="$utils.isDef(mvDetail.id)">
     <div class="mv-content">
+    <Scroll class='content'>
       <div class="left">
-        <p class="title">mv详情</p>
 
         <div class="player">
           <VideoPlayer :url="mvPlayInfo.url" ref="video" />
@@ -26,12 +26,7 @@
           >
           <span class="count">播放：{{ mvDetail.playCount }}次</span>
         </div>
-
-        <div class="comments">
-          <Comments :id="id" type="mv" />
-        </div>
-      </div>
-      <div class="right">
+ <div class="right">
         <p class="title">相关推荐</p>
         <div class="simi-mvs">
           <Card
@@ -52,6 +47,11 @@
           </Card>
         </div>
       </div>
+        <div class="comments">
+          <Comments :id="id" type="mv" />
+        </div>
+      </div>
+      </Scroll>
     </div>
   </div>
 </template>
@@ -62,6 +62,7 @@ import { hideMenuMixin } from "@/utils"
 import { mapMutations } from "@/store/helper/music"
 import Comments from "@/components/comments"
 import MvCard from "@/components/mv-card"
+import Scroll from '../../components/Scroll'
 
 export default {
   mixins: [hideMenuMixin],
@@ -123,7 +124,7 @@ export default {
   watch: {
     id: "init"
   },
-  components: { Comments, MvCard }
+  components: { Comments, MvCard,Scroll }
 }
 
 function genResource(brs, mvPlayInfo) {
@@ -150,24 +151,25 @@ function genResource(brs, mvPlayInfo) {
 
 <style lang="scss" scoped>
 .mv {
-  padding: $page-padding;
-
-  .title {
-    margin-bottom: 16px;
+ padding: 5px;
+ .title {
+   margin:16px 0 8px;
     font-size: $font-size-lg;
     font-weight: $font-weight-bold;
   }
-
   .mv-content {
-    display: flex;
-    max-width: 950px;
-    margin: auto;
-
+  height:100vh;
+  .content{
+    margin-top:40px;
+    height:calc(100% - 150px);
+    overflow:hidden
+  }
     .left {
-      flex: 1;
 
       .player {
-        margin-bottom: 16px;
+        width:300px;
+        height:250px;
+        margin:20px auto 20px;
         overflow: hidden;
         border-radius: 4px;
       }
@@ -208,13 +210,12 @@ function genResource(brs, mvPlayInfo) {
       }
 
       .comments {
-        margin-top: 48px;
+        margin-top: 30px;
       }
     }
 
     .right {
-      width: 36%;
-      padding-left: 32px;
+      width: 100%;
 
       .simi-mvs {
         padding: -8px 0;

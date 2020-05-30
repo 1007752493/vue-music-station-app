@@ -62,11 +62,7 @@
                 @volumeChange="onVolumeChange" />
       </div>
     </div>
-    <div class="progress-bar-wrap">
-      <ProgressBar :disabled="!hasCurrentSong"
-                   :percent="playedPercent"
-                   @percentChange="onProgressChange" />
-    </div>
+    
     <audio :src="currentSong.url"
            @canplay="ready"
            @ended="end"

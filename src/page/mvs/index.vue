@@ -1,7 +1,7 @@
 <template>
   <div class="mvs content"
        ref="page">
-    <div class="tabs-wrap tabs-top">
+    <!-- <div class="tabs-wrap tabs-top">
       <span class="tabs-type">地区：</span>
       <Tabs :tabs="areaTabs"
             class="tabs"
@@ -21,7 +21,7 @@
             class="tabs"
             type="split"
             v-model="activeSortTabIndex" />
-    </div>
+    </div> -->
     <Scroll class="content">
       <WithPagination :getData="getAllMvs"
                       :getDataParams="getDataParams"
@@ -102,19 +102,25 @@ export default {
   margin: auto;
   height: 100vh;
   .content {
-    height: calc(100% - 300px);
+    margin-top:40px;
+    height: calc(100% - 135px);
     overflow: hidden;
   }
   .tabs-top {
     margin-top: 50px;
   }
   .tabs-wrap {
+
+    margin-bottom:1px;
     display: flex;
     align-items: center;
 
     .tabs-type {
       font-size: $font-size-sm;
     }
+  }
+  .list-wrap {
+    padding-top:10px
   }
 }
 </style>

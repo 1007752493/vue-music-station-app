@@ -56,4 +56,7 @@ export default {
 .xgplayer-error {
   display: none;
 }
+.video-player{
+  margin-top:-85px;
+}
 </style>
