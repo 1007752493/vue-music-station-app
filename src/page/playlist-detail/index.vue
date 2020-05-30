@@ -144,7 +144,7 @@ export default {
   height: 100vh;
   margin-top: 40px;
   .content {
-    height: calc(100% - 73px);
+    height: calc(100% - 130px);
     overflow: hidden;
   }
 

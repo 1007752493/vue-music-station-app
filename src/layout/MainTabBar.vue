@@ -6,7 +6,7 @@
     <tab-bar-item path="/songs">
       <div slot="item-text">最新</div>
     </tab-bar-item>
-    <tab-bar-item path="/cart">
+    <tab-bar-item path="/mvs">
       <div slot="item-text">MV</div>
     </tab-bar-item>
   </tab-bar>

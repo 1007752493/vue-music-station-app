@@ -1,31 +1,25 @@
 <template>
-  <ul
-    :class="{[align]: true}"
-    class="tab-wrap"
-  >
+  <ul :class="{[align]: true}"
+      class="tab-wrap">
     <template v-if="isRouteMode">
-      <router-link
-        :active-class="`${ROUTE_ACTIVE_CLS} ${activeItemClass}`"
-        :key="index"
-        :style="getItemStyle(tab, index)"
-        :to="tab.to"
-        class="tab-item"
-        ref="routerLinks"
-        tag="li"
-        v-for="(tab, index) in normalizedTabs"
-      >
+      <router-link :active-class="`${ROUTE_ACTIVE_CLS} ${activeItemClass}`"
+                   :key="index"
+                   :style="getItemStyle(tab, index)"
+                   :to="tab.to"
+                   class="tab-item"
+                   ref="routerLinks"
+                   tag="li"
+                   v-for="(tab, index) in normalizedTabs">
         <span class="title">{{tab.title}}</span>
       </router-link>
     </template>
     <template v-else>
-      <li
-        :class="getItemCls(tab, index)"
-        :key="index"
-        :style="getItemStyle(tab, index)"
-        @click="onChangeTab(tab, index)"
-        class="tab-item"
-        v-for="(tab, index) in normalizedTabs"
-      >
+      <li :class="getItemCls(tab, index)"
+          :key="index"
+          :style="getItemStyle(tab, index)"
+          @click="onChangeTab(tab, index)"
+          class="tab-item"
+          v-for="(tab, index) in normalizedTabs">
         <span class="title">{{tab.title}}</span>
       </li>
     </template>
@@ -79,18 +73,18 @@ export default {
     prop: ACTIVE_PROP,
     event: ACTIVE_CHANGE
   },
-  created() {
+  created () {
     this.ROUTE_ACTIVE_CLS = ROUTE_ACTIVE_CLS
   },
   methods: {
-    onChangeTab(tab, index) {
+    onChangeTab (tab, index) {
       if (this.isRouteMode) {
         this.$router.push(tab.to)
       } else {
         this.$emit(ACTIVE_CHANGE, index)
       }
     },
-    isActive(tab, index) {
+    isActive (tab, index) {
       // 路由模式
       if (this.isRouteMode) {
         const {
@@ -101,7 +95,7 @@ export default {
         return index === this[ACTIVE_PROP]
       }
     },
-    getItemCls(tab, index) {
+    getItemCls (tab, index) {
       let base = []
       if (this.itemClass) {
         base.push(this.itemClass)
@@ -117,7 +111,7 @@ export default {
       }
       return base.join(" ")
     },
-    getItemStyle(tab, index) {
+    getItemStyle (tab, index) {
       return Object.assign(
         {},
         this.itemStyle,
@@ -128,10 +122,10 @@ export default {
     }
   },
   computed: {
-    isRouteMode() {
+    isRouteMode () {
       return this.tabs.length && isDef(this.tabs[0].to)
     },
-    normalizedTabs() {
+    normalizedTabs () {
       return typeof this.tabs[0] === "string"
         ? this.tabs.map(tab => ({ title: tab }))
         : this.tabs
@@ -189,8 +183,7 @@ export default {
 
     &.split {
       font-size: $font-size-sm;
-      padding: 4px 12px;
-      margin: 0 16px;
+
       border-radius: 999em;
 
       &.active {

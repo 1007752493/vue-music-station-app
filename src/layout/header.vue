@@ -8,7 +8,8 @@
           <img src="../assets/image/sort.png" />
         </div>
       </div>
-      <div slot="center">
+      <div slot="center"
+           @click="backClick">
         <h2>music station</h2>
       </div>
       <div slot="right"
@@ -31,8 +32,10 @@ export default {
       // this.$router.replace('/discovery').catch((err) => {
       //   err
       // })
-      this.$router.go(-1)
     },
+    backClick () {
+      this.$router.go(-1)
+    }
   },
 }
 </script>

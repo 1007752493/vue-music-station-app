@@ -40,6 +40,6 @@ export default {
 
 <style lang="scss" scoped>
 .new-mvs {
-  @include list(25%);
+  @include list(50%);
 }
 </style>

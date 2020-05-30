@@ -5,6 +5,7 @@
         <Banner />
         <NewPlaylists />
         <NewSongs />
+        <NewMvs />
       </scroll>
     </div>
   </div>
@@ -15,9 +16,10 @@ import Banner from './banner'
 import NewPlaylists from "./new-playlists"
 import Scroll from '../../components/Scroll'
 import NewSongs from "./new-songs"
+import NewMvs from './new-mvs'
 export default {
   name: 'index',
-  components: { Scroll, Banner, NewPlaylists, NewSongs },
+  components: { Scroll, Banner, NewPlaylists, NewSongs, NewMvs },
 }
 </script>
 
